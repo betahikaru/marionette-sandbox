@@ -43,18 +43,24 @@ TodoListView = Backbone.Marionette.CollectionView.extend({
   itemView: TodoView
 });
 
-// Application
-var todoNaviView = new TodoNaviView();
-var todo1 = new TodoModel({
-  description: "TODO表示機能",
-  done: true
+// Initializers
+App.addInitializer(function(options){
+  var todoNaviView = new TodoNaviView();
+  var todo1 = new TodoModel({
+    description: "TODO表示機能",
+    done: true
+  });
+  var todo2 = new TodoModel({
+    description: "TODO追加機能"
+  });
+  var todoCollection = new TodoCollection([todo1, todo2]);
+  var todoListView = new TodoListView({
+    collection: todoCollection
+  });
+  App.navigationRegion.show(todoNaviView);
+  App.mainRegion.show(todoListView);
 });
-var todo2 = new TodoModel({
-  description: "TODO追加機能"
-});
-var todoCollection = new TodoCollection([todo1, todo2]);
-var todoListView = new TodoListView({
-  collection: todoCollection
-});
-App.navigationRegion.show(todoNaviView);
-App.mainRegion.show(todoListView);
+
+// Start App
+var options = {};
+App.start(options);
