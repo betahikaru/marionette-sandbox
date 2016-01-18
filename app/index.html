@@ -41,14 +41,16 @@
 
   <!-- Templates -->
   <script type="text/template" id="todo-navigation-template">
-    <form class="form-inline">
-      <div class="form-group">
-        <label for="inputAddTodo">Todo</label>
-        <input type="text" class="form-control" id="inputAddTodo" placeholder="">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="input-group">
+          <input type="text" class="form-control" id="inputTodoDesc" placeholder="Todo...">
+          <span class="input-group-btn">
+            <button class="btn btn-default" type="button">Create</button>
+          </span>
+        </div>
       </div>
-      <button type="submit" class="btn btn-primary">Create</button>
-      </div>
-    </form>
+    </div>
   </script>
   <script type="text/template" id="todo-template">
     <div class="checkbox">
