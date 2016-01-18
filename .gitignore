@@ -32,3 +32,5 @@ node_modules
 npm-debug.log
 
 
+### Application
+app/asset/js/build.js
